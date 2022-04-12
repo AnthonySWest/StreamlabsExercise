@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Programming\Streamlabs\StreamlabsExercise\TestNode\src\testAddon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\Streamlabs\StreamlabsExercise\TestNode\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Programming\Streamlabs\StreamlabsExercise\TestNode\src\testAddon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Programming\Streamlabs\StreamlabsExercise\TestNode\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{97376FC9-1F5B-3A8B-A5DD-34E5EB3C5DC8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F726C21F-1BFC-332C-8BBA-7E4139E42B61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
