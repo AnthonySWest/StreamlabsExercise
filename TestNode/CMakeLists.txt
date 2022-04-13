@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 project (addonasw)
 
 set(CMAKE_CXX_STANDARD 17)
+#set (CMAKE_CXX_STANDARD 11)
 # Don't add this line if you will try_compile with boost.
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -22,9 +23,13 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 # This line will give our library file a .node extension without any "lib" prefix
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
+add_library(libobs STATIC IMPORTED)
+set_target_properties(libobs PROPERTIES IMPORTED_LOCATION ../libs/obs.lib)
+#set_target_properties(libobs PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ./libobs)
+
 # Essential library files to link to a node addon,
 # you should add this line in every CMake.js based project.
-target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB} libobs)
 
 # Include N-API wrappers
 execute_process(COMMAND node -p "require('node-addon-api').include"
@@ -34,6 +39,6 @@ execute_process(COMMAND node -p "require('node-addon-api').include"
 
 string(REPLACE "\n" "" NODE_ADDON_API_DIR ${NODE_ADDON_API_DIR})
 string(REPLACE "\"" "" NODE_ADDON_API_DIR ${NODE_ADDON_API_DIR})
-target_include_directories(${PROJECT_NAME} PRIVATE ${NODE_ADDON_API_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE ${NODE_ADDON_API_DIR} "./libobs")
 
-add_definitions(-DNAPI_VERSION=3)
+add_definitions(-DNAPI_VERSION=6)

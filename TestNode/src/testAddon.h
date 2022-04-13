@@ -1,10 +1,15 @@
+#ifndef testAddonH
+#define testAddonH
+
+//#define NAPI_VERSION 8
+
 #include <napi.h>
 #include <iostream>
 
 //modifed example from:
 //https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1
 
-using namespace std;
+//using namespace std;
 
 namespace testAddon
 {
@@ -17,4 +22,6 @@ namespace testAddon
 	//node api init stuff
 	Napi::Object Init(Napi::Env env, Napi::Object exports);
 	NODE_API_MODULE(addon, Init) //no semi colon on purpose
-}
+
+} //end namespace testAddon
+#endif

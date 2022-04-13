@@ -1,0 +1,5 @@
+﻿  testAddon.cpp
+  win_delay_load_hook.cc
+  Generating Code...
+     Creating library C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Debug/addonasw.lib and object C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Debug/addonasw.exp
+  addonasw.vcxproj -> C:\Programming\Streamlabs\StreamlabsExercise\TestNode\build\Debug\addonasw.node

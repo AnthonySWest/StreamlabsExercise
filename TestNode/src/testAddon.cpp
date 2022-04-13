@@ -1,8 +1,9 @@
 #include "testAddon.h"
+#include "obsWrap.h"
 
 namespace testAddon
 {
-using namespace std;
+//using namespace std;
 	
 // ------------------------------------------------------------------------------------------------
 int echoNum(int num)
@@ -26,7 +27,7 @@ Napi::Number API_echoNum(const Napi::CallbackInfo& info)
 	
 	//run c++ function return value and return it in javascript
 	Napi::Number returnValue = Napi::Number::New(env, echoNum(napiNumIn.Int32Value()));
- 
+
 	return returnValue;
 }
 
@@ -35,6 +36,7 @@ Napi::Object Init(Napi::Env env, Napi::Object exports)
 {
 	//export Napi function
 	exports.Set("echoNum", Napi::Function::New(env, API_echoNum));
+	ObsWrap::ObsTest::Init(env, exports);
 	return exports;
 }
 
