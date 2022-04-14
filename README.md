@@ -16,16 +16,16 @@ This test app addressed all of the assignment items, except for bonus:
 
 - Create an electron app (this thingy here).
 - Make electron app interact with a native module (it may not do it correctly, but it works lol - manual addon install was done - in a real world scenario, there would need to be some deployment method, using npm, or something?).
--Make the native module interact with the obs library that I built (used cmake) (Are you aware that the OBS instructions for OBS on github don't work? That was fun lol).
--Expose an API in the C++ side that can be accessed by the electron app. I have no idea what the right way is to do this, but it appears to work.
+- Make the native module interact with the obs library that I built (used cmake) (Are you aware that the OBS instructions for OBS on github don't work? That was fun lol).
+- Expose an API in the C++ side that can be accessed by the electron app. I have no idea what the right way is to do this, but it appears to work.
 
 Additional thoughts and items completed (due to my desire to learn more about this node stuff):
 
--In addition to exposing an object, also exposed a static function for additional learning.
--The assignment says it doesn't require node/electron experience. I beg to differ lol. Spent a lot of time reading docs before even starting. Have any of you tried this assignment lately? OBS doesn't build (without problem solving skills). Many node api examples don't work anymore, etc.
--The bonus steps seemed interesting, but, I spent way too much time on this already, and my kids miss me lol.
--After the app has been running for a bit (or after a reload), it fails to start OBS. Echo test still works. Mystery that would need solving if this was an official app.
--I had fun working on this, but, it was certainly a challenge for all but the C++ files themselves lol.
+- In addition to exposing an object, also exposed a static function for additional learning.
+- The assignment says it doesn't require node/electron experience. I beg to differ lol. Spent a lot of time reading docs before even starting. Have any of you tried this assignment lately? OBS doesn't build (without problem solving skills). Many node api examples don't work anymore, etc.
+- The bonus steps seemed interesting, but, I spent way too much time on this already, and my kids miss me lol.
+- After the app has been running for a bit (or after a reload), it fails to start OBS. Echo test still works. Mystery that would need solving if this was an official app.
+- I had fun working on this, but, it was certainly a challenge for all but the C++ files themselves lol.
 
 Enjoy :)
 
