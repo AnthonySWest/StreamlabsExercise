@@ -1,0 +1,10 @@
+^C:\PROGRAMMING\STREAMLABS\STREAMLABSEXERCISE\TESTNODE\BUILD\CMAKEFILES\7A399688CA606ADB661675E239DDF9AE\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/Streamlabs/StreamlabsExercise/TestNode -BC:/Programming/Streamlabs/StreamlabsExercise/TestNode/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/addonasw.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

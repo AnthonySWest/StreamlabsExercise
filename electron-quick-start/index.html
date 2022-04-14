@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Hello Streamlabs!</title>
+  </head>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+  <body>
+    <h1>Hello Streamlabs!</h1>
+	Please don't judge too harshly!
+	<p>
+	This electron/node stuff is completely foreign to me. cmake is also new to me, so don't expect everything to be correct there, but it works.
+	I spent 20+ hours on this, so if its not to your liking, then it is what it is :)
+	</p>
+	<p>
+	The assignment didn't address how to package this for deployment, so, I'm stopping here due to the time already invested in this assignment.
+	</p>
+	<p>
+	<b>This test app addressed all of the assignment items, except for bonus:</b>
+	<ul type="square">
+	  <li>Create an electron app (this thingy here).</li>
+	  <li>Make electron app interact with a native module (it may not do it correctly, but it works lol - manual addon install was done - in a real world scenario, there would need to be some deployment method, using npm, or something?).</li>
+	  <li>Make the native module interact with the obs library that I built (used cmake) (Are you aware that the OBS instructions for OBS on github don't work? That was fun lol).</li>
+	  <li>Expose an API in the C++ side that can be accessed by the electron app. I have no idea what the right way is to do this, but it appears to work.</li>
+	</ul>
+	<b>Additional thoughts and items completed (due to my desire to learn more about this node stuff):</b>
+	<ul>
+	  <li>In addition to exposing an object, also exposed a static function for additional learning.</li>
+	  <li>The assignment says it doesn't require node/electron experience. I beg to differ lol. Spent a lot of time reading docs before even starting. Have any of you tried this assignment lately? OBS doesn't build (without problem solving skills). Many node api examples don't work anymore, etc.</li>
+	  <li>The bonus steps seemed interesting, but, I spent way too much time on this already, and my kids miss me lol.</li>
+	  <li>After the app has been running for a bit (or after a reload), it fails to start OBS. Echo test still works. Mystery that would need solving if this was an official app.</li>
+	</ul>
+	<p>
+    Using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+	<hr>
+	<!--<button type="button" id="btnGAU" onclick="getAnsU()">Click For the Answer to the Universe</button>-->
+	<button type="button" id="btnGAU"  >Test Button</button>
+	<br>
+	Addon says answer to the universe is: <label id="lblAnsU"></label>
+	<br>
+	<button type="button" id="btnStartObs" >Start OBS Test</button>
+	<br>
+	Obs result: <label id="lblObsRes"></label>
+	
+
+	<!--
+	<script>
+	
+		function getAnswer() {
+			//call test node addon function
+			document.getElementById("lblAnsU").value = echoNum(42);
+		}
+	
+	</script>
+	-->
+  </body>
+</html>

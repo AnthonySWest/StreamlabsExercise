@@ -1,0 +1,21 @@
+{
+  "name": "addonasw",
+  "version": "1.0.0",
+  "description": "Test addon by Anthony S. West",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cmake-js compile"
+  },
+  "author": "Anthony S. West",
+  "license": "ISC",
+  "devDependencies": {
+    "cmake-js": "^6.3.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^4.3.0"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  }
+}
