@@ -1,0 +1,3 @@
+C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/CMakeFiles/addonasw.dir
+C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/CMakeFiles/ALL_BUILD.dir
+C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,6 @@
+﻿  obsWrap.cpp
+  testAddon.cpp
+  Generating Code...
+C:\Programming\Streamlabs\StreamlabsExercise\TestNode\src\obsWrap.cpp(88): warning C4715: 'ObsWrap::ObsTest::Start_P': not all control paths return a value
+     Creating library C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Release/addonasw.lib and object C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Release/addonasw.exp
+  addonasw.vcxproj -> C:\Programming\Streamlabs\StreamlabsExercise\TestNode\build\Release\addonasw.node

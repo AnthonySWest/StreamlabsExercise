@@ -1,0 +1,8 @@
+﻿  Building Custom Rule C:/Programming/Streamlabs/StreamlabsExercise/TestNode/CMakeLists.txt
+  obsWrap.cpp
+  testAddon.cpp
+  win_delay_load_hook.cc
+  Generating Code...
+C:\Programming\Streamlabs\StreamlabsExercise\TestNode\src\obsWrap.cpp(87): warning C4715: 'ObsWrap::ObsTest::Start_P': not all control paths return a value
+     Creating library C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Debug/addonasw.lib and object C:/Programming/Streamlabs/StreamlabsExercise/TestNode/build/Debug/addonasw.exp
+  addonasw.vcxproj -> C:\Programming\Streamlabs\StreamlabsExercise\TestNode\build\Debug\addonasw.node
