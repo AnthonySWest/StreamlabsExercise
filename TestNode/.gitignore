@@ -1,3 +1,4 @@
 *.ipch
-*.[t]log
+*.log
+*.tlog
 *.obj
