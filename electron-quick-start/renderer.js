@@ -13,10 +13,15 @@ worker.onmessage = function(event) {
    document.getElementById("lblAnsU").innerHTML = event.data;
    //terminate webworker
    
-   const btnGetAU = document.getElementById("btnGAU")
+   const btnGetAU = document.getElementById("btnGAU");
 
-    if (null != btnGetAU)
+   if (null != btnGetAU)
 	    btnGetAU.onclick = getAnsU;
+	
+   const btnStartOBS = document.getElementById("btnStartObs");
+   
+   if (null != btnStartOBS)
+	    btnStartOBS.onclick = startObs;
    
    worker.terminate();
    
@@ -29,7 +34,20 @@ worker.onerror = function (event) {
 };
 
 function getAnsU(){
-    console.log('Called!');
+    console.log('Called get answer!');
 	//const {echoNum} = app.require("./addonasw/addonasw.node");
 	document.getElementById("lblAnsU").innerHTML = "40 + 2 = " + window.myApi.echoNumE(window.myApi.echoNumE(40)+2);
+}
+
+function startObs(){
+	console.log('Calling shutdown obs...');
+	window.myApi.obsTest.Shutdown();
+    console.log('Calling start obs');
+	var started = window.myApi.obsTest.Start();
+	console.log('Start result: ' + started);
+	started = window.myApi.obsTest.Started();
+	console.log('Started result: ' + started);
+	
+	document.getElementById("lblObsRes").innerHTML = "started: " + started;
+	console.log("obs echo (expecting \"pineapple pen\"): " + myApi.obsTest.EchoTestStr("pineapple pen"));
 }

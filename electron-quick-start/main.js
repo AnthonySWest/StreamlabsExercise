@@ -3,12 +3,16 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+//const {ObsTest} = require("./addonasw/addonasw.node")
+//module.exports = require('bindings')('addon')
+//const {ObsTest} = require('bindings')('addon');
+//const {ObsTest} = require('bindings')('./addonasw/addonasw.node');
 
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 720,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
 	  nodeIntegration: true,

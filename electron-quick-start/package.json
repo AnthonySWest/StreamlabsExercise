@@ -17,6 +17,12 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^18.0.2"
+    "electron": "^18.0.2",
+    "electron-rebuild": "^3.2.7"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "^2.15.0",
+    "node-gyp": "^9.0.0"
   }
 }

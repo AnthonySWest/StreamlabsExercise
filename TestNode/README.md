@@ -4,7 +4,7 @@ To build (powershell in this directory):
 
 npm install
 
-To run:
+To run addon:
 
 node index
 

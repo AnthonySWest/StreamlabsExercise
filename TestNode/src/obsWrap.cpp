@@ -26,6 +26,7 @@ Napi::Object ObsTest::Init(Napi::Env env, Napi::Object exports)
 		InstanceMethod<&ObsTest::Shutdown>("Shutdown", attribs),
 		InstanceMethod<&ObsTest::Started>("Started", attribs),
 		InstanceMethod<&ObsTest::Initialized>("Initialized", attribs),
+		InstanceMethod<&ObsTest::EchoTestStr>("EchoTestStr", attribs),
 		StaticMethod<&ObsTest::CreateNewItem>("CreateNewItem", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
 		});
 
@@ -134,6 +135,21 @@ Napi::Value ObsTest::Initialized(const Napi::CallbackInfo& info)
 	bool initialized = ::obs_initialized();
 	Napi::Env env = info.Env();
 	return Napi::Boolean::New(env, initialized);
+}
+// ------------------------------------------------------------------------------------------------
+Napi::Value ObsTest::EchoTestStr(const Napi::CallbackInfo& info)
+{
+	const size_t idxOfStr = 0;
+	std::string str;
+	Napi::Env env = info.Env();
+
+	if (info.Length() > idxOfStr && info[idxOfStr].IsString())
+	{
+		Napi::String value = info[idxOfStr].As<Napi::String>();
+		str = value.Utf8Value();
+	}
+
+	return Napi::String::New(env, str);
 }
 // ------------------------------------------------------------------------------------------------
 // Create a new item using the constructor stored during Init.

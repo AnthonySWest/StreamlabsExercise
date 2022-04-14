@@ -60,6 +60,7 @@ public:
 	Napi::Value Started(const Napi::CallbackInfo& info);
 	Napi::Value Initialized(const Napi::CallbackInfo& info);
 
+	Napi::Value EchoTestStr(const Napi::CallbackInfo& info);
 	
 	// ///////// mysterious node stuff /////////////////////////////////////////////////
 
@@ -67,6 +68,8 @@ public:
 	static Napi::Value CreateNewItem(const Napi::CallbackInfo& info);
 
 };
+
+//NODE_API_MODULE(NODE_GYP_MODULE_NAME, Init) //no semi colon on purpose
 	
 } //end namespace obsWrap
 #endif
