@@ -40,14 +40,17 @@ function getAnsU(){
 }
 
 function startObs(){
-	console.log('Calling shutdown obs...');
-	window.myApi.obsTest.Shutdown();
+	if (window.myApi.obsTest.Initialized()) {
+	  console.log('Calling shutdown obs...');
+	  window.myApi.obsTest.Shutdown();
+	}
     console.log('Calling start obs');
 	var started = window.myApi.obsTest.Start();
 	console.log('Start result: ' + started);
 	started = window.myApi.obsTest.Started();
-	console.log('Started result: ' + started);
+	var obsVerStr = window.myApi.obsTest.OBSVersionStr();
+	console.log('Started result: ' + started + ", obsVer: " + obsVerStr);
 	
-	document.getElementById("lblObsRes").innerHTML = "started: " + started;
+	document.getElementById("lblObsRes").innerHTML = "started: " + started + ", obsVer: " + obsVerStr;
 	console.log("obs echo (expecting \"pineapple pen\"): " + myApi.obsTest.EchoTestStr("pineapple pen"));
 }

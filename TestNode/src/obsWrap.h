@@ -61,6 +61,7 @@ public:
 	Napi::Value Initialized(const Napi::CallbackInfo& info);
 
 	Napi::Value EchoTestStr(const Napi::CallbackInfo& info);
+	Napi::Value OBSVersionStr(const Napi::CallbackInfo& info);
 	
 	// ///////// mysterious node stuff /////////////////////////////////////////////////
 

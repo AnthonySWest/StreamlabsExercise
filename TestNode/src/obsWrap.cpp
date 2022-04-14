@@ -7,7 +7,7 @@ namespace ObsWrap
 
 // /////////////// class statics ////////////////////////////////////////////
 
-const std::string ObsTest::DEFAULT_LOCALE = "en-us";
+const std::string ObsTest::DEFAULT_LOCALE = "en-US";
 	
 
 /////////////////////////////////////////////////////////////////////////////
@@ -27,6 +27,7 @@ Napi::Object ObsTest::Init(Napi::Env env, Napi::Object exports)
 		InstanceMethod<&ObsTest::Started>("Started", attribs),
 		InstanceMethod<&ObsTest::Initialized>("Initialized", attribs),
 		InstanceMethod<&ObsTest::EchoTestStr>("EchoTestStr", attribs),
+		InstanceMethod<&ObsTest::OBSVersionStr>("OBSVersionStr", attribs),
 		StaticMethod<&ObsTest::CreateNewItem>("CreateNewItem", static_cast<napi_property_attributes>(napi_writable | napi_configurable)),
 		});
 
@@ -85,12 +86,14 @@ bool ObsTest::Start_P(const char* locale)
 		return false;
 
 	m_obsStarted = true;
+	return true;
 }
 // ------------------------------------------------------------------------------------------------
 void ObsTest::Shutdown_P()
 {
-	if (!m_obsStarted)
-		return;
+	//just call shutdown anyway
+	//if (!m_obsStarted)
+	//	return;
 
 	::obs_shutdown();
 	m_obsStarted = false;
@@ -150,6 +153,12 @@ Napi::Value ObsTest::EchoTestStr(const Napi::CallbackInfo& info)
 	}
 
 	return Napi::String::New(env, str);
+}
+// ------------------------------------------------------------------------------------------------
+Napi::Value ObsTest::OBSVersionStr(const Napi::CallbackInfo& info)
+{
+	std::string obsVerStr = obs_get_version_string();
+	return Napi::String::New(info.Env(), obsVerStr);
 }
 // ------------------------------------------------------------------------------------------------
 // Create a new item using the constructor stored during Init.

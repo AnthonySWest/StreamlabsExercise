@@ -39,7 +39,9 @@ contextBridge.exposeInMainWorld('myApi', {
     Start: () => obsTest.Start(),
     Started: () => obsTest.Started(),
     Shutdown: () => obsTest.Shutdown(),
+	Initialized: () => obsTest.Initialized(),
 	EchoTestStr: (value) => obsTest.EchoTestStr(value),
+	OBSVersionStr: () => obsTest.OBSVersionStr()
   }
   //obsTestE: obsTest
   //obsTestObj = new ObsTest(false)
